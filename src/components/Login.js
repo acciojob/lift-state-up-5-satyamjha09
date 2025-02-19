@@ -1,22 +1,26 @@
-import React from "react";
+import React from 'react'
 
-const Login = ({ onLogin }) => {
-    
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onLogin(); // Calls the parent function to update state
-  };
+const Login = ({onLogin }) => {
+
+
+    const handleSumbit = (e) => {
+        e.preventDefault();
+        onLogin();
+    }
+
 
   return (
     <div>
-      <h2>Login Form</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Username" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-      </form>
+        <h1> Parent Component </h1>
+        <form onSubmit={handleSumbit}>
+            <label for="username"> Username: </label>
+            <input type="text" id="username" placeholder='username' />
+            <label for="password"> Password: </label>
+            <input type="password" id="password" placeholder='Password' />
+            <button type="submit"> sumbit </button>
+        </form>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
