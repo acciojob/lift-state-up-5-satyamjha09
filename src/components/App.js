@@ -1,30 +1,15 @@
-import React, { useState } from 'react'
-import Login from './Login';
-import "../styles/App.css"
+import React, { useState } from "react";
+import Login from "./Login";
 
-const App = () => {
-
-
-  const [isLogin, setIsLogin] = useState(false);
-
-
-  const handleSumbit = () => {
-    setIsLogin(true);
-  }
-
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div>
-
-      {isLogin ? (
-        <div> Welcome , to Our website </div>
-      ) : (
-        <Login onLogin={handleSumbit} />
-      )}
-
-
+    <div className="app">
+      <h1>{isLoggedIn ? "Welcome, User!" : "Please Log In"}</h1>
+      <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

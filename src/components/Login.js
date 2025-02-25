@@ -1,26 +1,24 @@
-import React from 'react'
+import React from "react";
 
-const Login = ({onLogin }) => {
-
-
-    const handleSumbit = (e) => {
-        e.preventDefault();
-        onLogin();
-    }
-
+function Login({ isLoggedIn, setIsLoggedIn }) {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setIsLoggedIn(true); // Update parent state
+  };
 
   return (
     <div>
-        <h1> Parent Component </h1>
-        <form onSubmit={handleSumbit}>
-            <label for="username"> Username: </label>
-            <input type="text" id="username" placeholder='username' />
-            <label for="password"> Password: </label>
-            <input type="password" id="password" placeholder='Password' />
-            <button type="submit"> sumbit </button>
+      {isLoggedIn ? (
+        <p>You are logged in!</p>
+      ) : (
+        <form onSubmit={handleLogin}>
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
         </form>
+      )}
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
