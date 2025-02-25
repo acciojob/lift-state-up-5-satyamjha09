@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>{isLoggedIn ? "Welcome, User!" : "Please Log In"}</h1>
+      <h1>{isLoggedIn ? "Welcome, User!" : "Parent Component"}</h1>
       <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
     </div>
   );
